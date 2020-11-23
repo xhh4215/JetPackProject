@@ -32,8 +32,8 @@ interface GoldenMangoServices {
     @FormUrlEncoded
     @POST("api/machine/handheld/login")
     suspend fun login(
-        @Field("userName") username: String?,
-        @Field("passWord") password: String?
+        @Field("userName") username: String,
+        @Field("passWord") password: String
     ): LoginResponse
 
     @FormUrlEncoded

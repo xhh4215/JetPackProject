@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setSupportActionBar(binding.mainTitleBackground)
         navController = this.findNavController(R.id.Navigation_Fragment)
         appBarConfiguration = AppBarConfiguration(setOf(R.id.sabotFragment), drawerLayout)
-
         NavigationUI.setupWithNavController(
             binding.mainTitleBackground,
             navController,
@@ -41,12 +40,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         binding.bottomnavigationview.setOnNavigationItemSelectedListener(this)
     }
-
-//    override fun onSupportNavigateUp(): Boolean {
-//        val navController = this.findNavController(R.id.Navigation_Fragment)
-//        return NavigationUI.navigateUp(navController, drawerLayout)
-//    }
-
 
     /***
      * 设置地步导航栏的点击

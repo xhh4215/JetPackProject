@@ -5,7 +5,11 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.xdzl.golden.mango.application.viewmodel.MainViewModel" />
     </data>
+
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerlayout"
@@ -24,16 +28,15 @@
                 android:layout_gravity="center"
                 android:background="@color/login_button_background"
                 android:elevation="@dimen/dimens_dp_12"
-
                 android:fontFamily="@font/phone_style_blod"
                 android:scaleType="centerCrop"
                 android:textColor="@color/color_white"
                 android:textSize="@dimen/dimens_sp_18"
                 android:visibility="gone"
-                app:navigationIcon="@drawable/back"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/back"
                 app:title="@string/main_title"></androidx.appcompat.widget.Toolbar>
 
 

@@ -15,7 +15,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.onNavDestinationSelected
 import com.xdzl.golden.mango.application.R
+import com.xdzl.golden.mango.application.adapter.RecycleViewAdapter
 import com.xdzl.golden.mango.application.databinding.MainFragmentBinding
+import com.xdzl.golden.mango.application.entity.HandleResponse
+import com.xdzl.golden.mango.application.entity.RecyclerViewResponse
 import com.xdzl.golden.mango.application.utils.fixStatusBar
 import com.xdzl.golden.mango.application.viewmodel.MainViewModel
 import com.xdzl.golden.mango.application.viewmodel.MainViewModelFactory
@@ -31,20 +34,29 @@ class MainFragment : Fragment() {
     lateinit var viewModel: MainViewModel
     lateinit var viewModelFactory: MainViewModelFactory
     lateinit var binding: MainFragmentBinding
-
+    lateinit var adapter: RecycleViewAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
+
         var status = MainFragmentArgs.fromBundle(requireArguments()).loginStatus
         viewModelFactory = MainViewModelFactory(status)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         viewModel.isLogin.observe(viewLifecycleOwner, Observer {
             if (it) {
+                viewModel.initList()
                 requireActivity().main_title_background.visibility = View.VISIBLE
                 requireActivity().bottomnavigationview.visibility = View.VISIBLE
                 fixStatusBar(this, requireActivity().main_title_background)
+                adapter = RecycleViewAdapter()
+                binding.recycleViewList.adapter = adapter
+                viewModel.handleData.observe(viewLifecycleOwner, Observer { HandleResponse ->
+                    HandleResponse?.let {
+                        adapter.submitList(HandleResponse.data)
+                    }
+                })
             } else {
                 val action = MainFragmentDirections.actionMainFragmentToLoginFragment()
                 action.loginStatus = it
@@ -52,13 +64,7 @@ class MainFragment : Fragment() {
 
             }
         })
-        binding.mainItemInputContainer.setOnClickListener {
-            it.findNavController().navigate(
-                MainFragmentDirections.actionMainFragmentToOutInputFragment(
-                    ACTION_INPUT
-                )
-            )
-        }
+
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -67,6 +73,7 @@ class MainFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_file, menu)
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(
