@@ -16,6 +16,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.onNavDestinationSelected
 import com.xdzl.golden.mango.application.R
 import com.xdzl.golden.mango.application.adapter.RecycleViewAdapter
+import com.xdzl.golden.mango.application.adapter.RecycleViewListener
 import com.xdzl.golden.mango.application.databinding.MainFragmentBinding
 import com.xdzl.golden.mango.application.entity.HandleResponse
 import com.xdzl.golden.mango.application.entity.RecyclerViewResponse
@@ -50,7 +51,9 @@ class MainFragment : Fragment() {
                 requireActivity().main_title_background.visibility = View.VISIBLE
                 requireActivity().bottomnavigationview.visibility = View.VISIBLE
                 fixStatusBar(this, requireActivity().main_title_background)
-                adapter = RecycleViewAdapter()
+                adapter = RecycleViewAdapter(RecycleViewListener {
+                    Toast.makeText(requireContext(), "recycleView的点击事件", Toast.LENGTH_SHORT).show()
+                })
                 binding.recycleViewList.adapter = adapter
                 viewModel.handleData.observe(viewLifecycleOwner, Observer { HandleResponse ->
                     HandleResponse?.let {

@@ -20,7 +20,7 @@
         android:layout_margin="@dimen/dimens_dp_12"
         android:background="@drawable/main_background_white"
         android:elevation="@dimen/dimens_dp_12"
-
+        android:onClick="@{()->clicklistener.onClick(1)}"
         >
 
         <LinearLayout

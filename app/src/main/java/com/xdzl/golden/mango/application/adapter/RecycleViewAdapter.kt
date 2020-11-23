@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xdzl.golden.mango.application.R
 import com.xdzl.golden.mango.application.databinding.RecycleviewItemBinding
 import com.xdzl.golden.mango.application.entity.HandleResponse
-import com.xdzl.golden.mango.application.entity.RecyclerViewResponse
 
-class RecycleViewAdapter() :
+class RecycleViewAdapter(val clickListener: RecycleViewListener) :
     ListAdapter<HandleResponse.HandleData, RecycleViewHolder>(RecycleViewDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecycleViewHolder {
@@ -19,7 +18,7 @@ class RecycleViewAdapter() :
 
 
     override fun onBindViewHolder(holder: RecycleViewHolder, position: Int) {
-        holder.bind(getItem(position)!!)
+        holder.bind(getItem(position)!!, clickListener)
     }
 }
 
@@ -42,8 +41,8 @@ class RecycleViewDiffCallback : DiffUtil.ItemCallback<HandleResponse.HandleData>
 }
 
 class RecycleViewListener(val clickListener: (sleepId: Int) -> Unit) {
-    fun onClick(recyclerViewResponse: RecyclerViewResponse) =
-        clickListener(recyclerViewResponse.id)
+    fun onClick(recyclerViewResponse: Int) =
+        clickListener(recyclerViewResponse)
 }
 
 
@@ -59,8 +58,10 @@ class RecycleViewHolder private constructor(val binding: RecycleviewItemBinding)
     }
 
     fun bind(
-        recyclerResponse: HandleResponse.HandleData
+        recyclerResponse: HandleResponse.HandleData,
+        clickListener: RecycleViewListener
     ) {
+        binding.clicklistener = clickListener
         binding.mainItemInputTextOne.text = recyclerResponse.name
         binding.mainItemInputTextTwo.text = recyclerResponse.createDate
         binding.mainItemInputImg.setImageResource(R.drawable.main_item_one)
