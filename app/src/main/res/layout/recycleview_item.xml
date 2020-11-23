@@ -20,8 +20,7 @@
         android:layout_margin="@dimen/dimens_dp_12"
         android:background="@drawable/main_background_white"
         android:elevation="@dimen/dimens_dp_12"
-        android:onClick="@{()->clicklistener.onClick(1)}"
-        >
+        android:onClick="@{()->clicklistener.onClick(1)}">
 
         <LinearLayout
             android:id="@+id/main_item_input_text_container"
@@ -39,9 +38,9 @@
                 android:layout_marginLeft="@dimen/dimens_dp_23"
                 android:background="@color/color_white"
                 android:fontFamily="@font/phone_style_blod"
-                android:text="@string/main_item_input"
                 android:textColor="@color/main_small_text_color"
-                android:textSize="@dimen/dimens_sp_18" />
+                android:textSize="@dimen/dimens_sp_18"
+                app:bindTitle="@{item}" />
 
             <TextView
                 android:id="@+id/main_item_input_text_two"
@@ -51,9 +50,9 @@
                 android:layout_marginTop="@dimen/dimens_dp_14"
                 android:background="@color/color_white"
                 android:fontFamily="@font/phone_style"
-                android:text="@string/main_item_input_info"
                 android:textColor="@color/login_tip_color"
-                android:textSize="@dimen/dimens_sp_14" />
+                android:textSize="@dimen/dimens_sp_14"
+                app:bindingInfo="@{item}" />
 
 
         </LinearLayout>

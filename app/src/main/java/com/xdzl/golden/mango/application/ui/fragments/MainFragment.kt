@@ -52,12 +52,13 @@ class MainFragment : Fragment() {
                 requireActivity().bottomnavigationview.visibility = View.VISIBLE
                 fixStatusBar(this, requireActivity().main_title_background)
                 adapter = RecycleViewAdapter(RecycleViewListener {
-                    Toast.makeText(requireContext(), "recycleView的点击事件", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.sabotFragment)
+                    requireActivity().bottomnavigationview.visibility = View.GONE
                 })
                 binding.recycleViewList.adapter = adapter
                 viewModel.handleData.observe(viewLifecycleOwner, Observer { HandleResponse ->
                     HandleResponse?.let {
-                        adapter.submitList(HandleResponse.data)
+                        adapter.addHeaderAndSubmitList(HandleResponse.data)
                     }
                 })
             } else {
