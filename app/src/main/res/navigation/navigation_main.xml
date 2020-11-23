@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.xdzl.golden.mango.application.ui.fragments.MainFragment"
+        tools:layout="@layout/main_fragment">
+        <argument
+            android:name="login_status"
+            android:defaultValue="nouser"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mainFragment_to_checkFragment"
+            app:destination="@id/checkFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_sabotFragment"
+            app:destination="@id/sabotFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_outInputFragment"
+            app:destination="@id/outInputFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkFragment"
+        android:name="com.xdzl.golden.mango.application.ui.fragments.CheckFragment"
+         tools:layout="@layout/check_fragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/sabotFragment"
+        android:name="com.xdzl.golden.mango.application.ui.fragments.SabotFragment"
+         tools:layout="@layout/sabot_fragment">
+        <action
+            android:id="@+id/action_sabotFragment_to_sabotListFragment"
+            app:destination="@id/sabotListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sabotListFragment"
+        android:name="com.xdzl.golden.mango.application.ui.fragments.SabotListFragment"
+         tools:layout="@layout/sabot_list_fragment" />
+    <fragment
+        android:id="@+id/outInputFragment"
+        android:name="com.xdzl.golden.mango.application.ui.fragments.OutInputFragment"
+         tools:layout="@layout/out_input_fragment">
+
+        <action
+            android:id="@+id/action_outInputFragment_to_outInputListFragment"
+            app:destination="@id/outInputListFragment" />
+        <argument
+            android:name="out_in_flag"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/outInputListFragment"
+        android:name="com.xdzl.golden.mango.application.ui.fragments.OutInputListFragment"
+         tools:layout="@layout/out_input_list_fragment" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.xdzl.golden.mango.application.ui.fragments.SettingFragment"
+         tools:layout="@layout/setting_fragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.xdzl.golden.mango.application.ui.fragments.LoginFragment"
+         >
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="login_status"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+</navigation>

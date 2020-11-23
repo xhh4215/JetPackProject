@@ -1,0 +1,123 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- 应用程序的主品牌颜色。默认情况下，这是应用于 操作栏的背景 -->
+        <!--        设置默认的主题色-->
+        <item name="colorPrimary">@color/login_button_background</item>
+        <!--        设置默认的字体的颜色-->
+        <item name="android:textColorPrimary">@color/color_white</item>
+        <!--        设置窗口的背景颜色-->
+        <item name="android:windowBackground">@color/login_split_color</item>
+        <!--        设置状态栏的颜色-->
+        <!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+        <!--        可选中的控件选中的颜色-->
+        <!--        <item name="colorOnPrimary">@color/login_button_background</item>-->
+        <!--        设置底部导航栏的默认颜色 文本 和图标-->
+        <item name="colorOnSurface">@color/login_tip_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+
+    <style name="TextAppearance.App.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/phone_style</item>
+        <item name="android:fontFamily">@font/phone_style</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="output_item_header_title_style">
+        <item name="android:textColor">@color/output_list_item_title_color</item>
+        <item name="android:textSize">@dimen/dimens_sp_15</item>
+        <item name="android:layout_marginTop">@dimen/dimens_dp_14</item>
+        <item name="android:layout_marginBottom">@dimen/dimens_dp_15</item>
+        <item name="android:layout_marginLeft">@dimen/dimens_dp_18</item>
+
+    </style>
+
+    <style name="output_item_header_number_style">
+        <item name="android:layout_marginLeft">@dimen/dimens_dp_8</item>
+        <item name="android:layout_marginBottom">@dimen/dimens_dp_10</item>
+        <item name="android:layout_marginTop">@dimen/dimens_dp_8</item>
+        <item name="android:textSize">@dimen/dimens_sp_14</item>
+    </style>
+
+    <style name="output_item_header_total_style">
+        <item name="android:layout_marginRight">@dimen/dimens_dp_12</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/output_list_item_total_color</item>
+        <item name="android:textSize">@dimen/dimens_sp_12</item>
+    </style>
+
+    <style name="output_item_title_style">
+        <item name="android:textColor">@color/output_list_item_title_color</item>
+        <item name="android:textSize">@dimen/dimens_sp_15</item>
+        <item name="android:layout_marginLeft">@dimen/dimens_dp_5</item>
+        <item name="android:layout_marginTop">@dimen/dimens_dp_8</item>
+    </style>
+
+    <style name="output_item_number_style">
+        <item name="android:layout_marginLeft">@dimen/dimens_dp_8</item>
+        <item name="android:layout_marginBottom">@dimen/dimens_dp_10</item>
+        <item name="android:layout_marginTop">@dimen/dimens_dp_8</item>
+        <item name="android:textSize">@dimen/dimens_sp_14</item>
+    </style>
+
+    <style name="output_item_footer_text_style">
+        <item name="android:textColor">@color/output_text_color</item>
+        <item name="android:textSize">@dimen/dimens_sp_14</item>
+    </style>
+
+    <style name="check_text_style">
+        <item name="android:layout_marginLeft">@dimen/dimens_dp_20</item>
+        <item name="android:textSize">@dimen/dimens_sp_15</item>
+        <item name="android:textColor">@color/main_item_color</item>
+    </style>
+
+    <style name="logout_text_style">
+        <item name="android:layout_marginLeft">@dimen/dimens_dp_20</item>
+        <item name="android:textSize">@dimen/dimens_sp_15</item>
+        <item name="android:textColor">@color/main_item_color</item>
+    </style>
+
+    <style name="logout_text_style_info" parent="logout_text_style">
+        <item name="android:gravity">end|center_vertical</item>
+        <item name="android:layout_marginRight">@dimen/dimens_dp_20</item>
+
+    </style>
+
+    <style name="check_text_container_style">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/dimens_dp_10</item>
+        <item name="android:background">@color/color_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">@dimen/dimens_dp_55</item>
+    </style>
+
+    <style name="logout_text_container_style" parent="logout_text_container_top_style">
+        <item name="android:layout_marginTop">@dimen/dimens_dp_10</item>
+    </style>
+
+    <style name="logout_text_container_bottom_style" parent="logout_text_container_top_style">
+        <item name="android:layout_marginTop">@dimen/dimens_dp_64</item>
+
+    </style>
+
+    <style name="logout_text_container_top_style">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/color_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">@dimen/dimens_dp_55</item>
+    </style>
+
+    <style name="logout_btn_text_style">
+        <item name="android:textSize">@dimen/dimens_sp_16</item>
+        <item name="android:textColor">@color/output_text_color</item>
+    </style>
+
+</resources>

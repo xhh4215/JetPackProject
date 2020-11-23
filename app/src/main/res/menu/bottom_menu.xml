@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/main_check"
+        android:icon="@drawable/ic_check"
+        android:title="质检" />
+    <item
+        android:id="@+id/main_sabot"
+        android:icon="@drawable/ic_sabot"
+
+        android:title="装盘" />
+    <item
+        android:id="@+id/main_input"
+        android:icon="@drawable/ic_input"
+
+        android:title="出库" />
+</menu>

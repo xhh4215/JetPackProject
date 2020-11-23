@@ -1,0 +1,3 @@
+include ':app_architecture'
+include ':app'
+rootProject.name = "GoldenMangoApplication"

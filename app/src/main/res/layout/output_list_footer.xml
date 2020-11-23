@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimens_dp_40"
+    android:layout_marginLeft="@dimen/dimens_dp_10"
+    android:layout_marginRight="@dimen/dimens_dp_10"
+    android:layout_marginBottom="@dimen/dimens_dp_10"
+    android:background="@drawable/output_footer_background"
+    android:gravity="center"
+    app:layout_constraintBottom_toTopOf="@+id/output_list_to_commit_container"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/output_list_recyclerview">
+
+    <TextView
+        style="@style/output_item_footer_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/color_white"
+        android:fontFamily="@font/phone_style"
+        tools:text="查看更多" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dimens_dp_8"
+        android:background="@color/color_white"
+        android:src="@drawable/more" />
+
+</LinearLayout>

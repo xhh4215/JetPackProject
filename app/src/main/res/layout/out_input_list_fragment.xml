@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.OutInputListFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.activity.OutputOrInputListActivity">
+
+
+
+            <include
+                android:id="@+id/output_list_header"
+                layout="@layout/output_list_header" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/output_list_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginRight="@dimen/dimens_dp_10"
+                android:layout_marginLeft="@dimen/dimens_dp_10"
+                android:background="@color/color_white"
+                app:layout_constraintBottom_toTopOf="@+id/output_list_footer"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/output_list_header" />
+
+            <include
+                android:id="@+id/output_list_footer"
+                layout="@layout/output_list_footer"
+                app:layout_constraintBottom_toTopOf="@+id/output_list_to_commit_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/output_list_recyclerview" />
+
+            <LinearLayout
+                android:id="@+id/output_list_to_commit_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimens_dp_55"
+                android:background="@color/color_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <Button
+                    android:id="@+id/output_list_to_commit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimens_dp_40"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimens_dp_27"
+                    android:layout_marginRight="@dimen/dimens_dp_27"
+                    android:background="@drawable/login_button_background_blue"
+                    android:text="@string/output_to_output"
+                    android:fontFamily="@font/phone_style"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/dimens_sp_18" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

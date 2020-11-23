@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">GoldenMangoApplication</string>
+    <string name="login_title">密码登陆</string>
+    <string name="login_tip">请输入密码直接登陆</string>
+    <string name="login_phone">请输入手机号</string>
+    <string name="login_password">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="main_title">首页</string>
+    <string name="main_item_input">入库管理</string>
+    <string name="main_item_input_info">扫码托盘的NFC标签入库</string>
+    <string name="main_item_output">出库管理</string>
+    <string name="main_item_sabot">装盘管理</string>
+    <string name="main_item_check">巡检</string>
+
+
+    <string name="output_title">扫码出库</string>
+    <string name="output_tip_text">扫描托盘的NFC标签出库</string>
+    <string name="output_list_title">出库列表</string>
+    <string name="output_to_output">出库</string>
+    <string name="output_list_item_title">产品名称</string>
+    <string name="output_nfc">识别芯片出库</string>
+    <string name="input_tip_text">扫描托盘的NFC标签入库</string>
+    <string name="input_nfc">识别芯片入库</string>
+    <string name="input_list_title">装盘列表</string>
+    <string name="input_to_input">装盘</string>
+    <string name="input_title">扫码入库</string>
+
+    <string name="sabot_tip_text">扫描产品标签装盘</string>
+    <string name="sabot_title">扫码装盘</string>
+
+    <string name="check_title">巡检</string>
+    <string name="check_bind">绑定</string>
+
+    <string name="logout_title">设置</string>
+
+
+</resources>
